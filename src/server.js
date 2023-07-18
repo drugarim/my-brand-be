@@ -17,12 +17,12 @@ const server = async () => {
     try {
 
         if (mode == 'development'){
-            mongoose.connect(process.env.DATABESE_URL_DEV, { useNewUrlParse: true})
+            mongoose.connect(process.env.DATABESE_URL_DEV)
             console.log("Connecting to database (Development)");
         }
 
         if (mode == 'production'){
-            mongoose.connect(process.env.DATABESE_URL_DEV, { useNewUrlParse: true})
+            mongoose.connect(process.env.DATABESE_URL_DEV)
             console.log("Connecting to database (Production)"); 
         }
 

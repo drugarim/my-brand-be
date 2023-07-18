@@ -4,21 +4,19 @@ const schema = mongoose.Schema ({
     name: {
         type: String, required: true
     },
-    email: {
-        type: String, required: true, unique: true
-    },
-    password: {
+    description: {
         type: String, required: true
     },
-    role: {
-        type: String, required: true, enum: ['ADMIN', 'OTHER'],
-        default: "OTHER"
+    location:{
+        type: String, required: true 
     },
-    created_at: {
-        type: Date,
-        default: Date.now()
+    image:{
+        type: String, required: true 
     },
-    is_active: {
+    created_at:{
+        type: Date, default: Date.now()
+    },
+    is_visible: {
         type: Boolean, required: true, default: true
     },
     is_deleted: {
@@ -26,4 +24,4 @@ const schema = mongoose.Schema ({
     }
 })
 
-export const User = mongoose.model('User', schema)
+export const Project = mongoose.model('Project', schema)

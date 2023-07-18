@@ -7,14 +7,15 @@ export class UserController{
     static async createUser(req, res, next){
         const createdUser = await UserServices.createUser(req.body)
 
+        console.log(req.body);
         res.status(201).json({
-            "message": `${createdUsser.email} is created successfully`
+            "message": `${createdUser.email} is created successfully`
         })
     }
 
     static async readAllUsers(req, res, next){
         const users = await UserServices.readAllUsers()
-        res.status(201).json([...users])
+        res.status(200).json([...users])
     } 
 
     
